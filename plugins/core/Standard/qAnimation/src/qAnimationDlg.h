@@ -73,7 +73,8 @@ protected: //methods
 	void updateCurrentStepDuration();
 	void updateTotalDuration();
 
-	bool getNextSegment(size_t& vp1, size_t& vp2) const;
+	bool getNextSegment(size_t& vp0, size_t& vp1, size_t& vp2, size_t& vp3);
+	void resetSegment(size_t selected_index);
 
 	void render(bool asSeparateFrames);
 
@@ -89,6 +90,7 @@ protected: //members
 	};
 
 	std::vector<Step> m_videoSteps;
+	int m_current_step_index;
 
 	ccGLWindow* m_view3d;
 };
